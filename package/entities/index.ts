@@ -1,0 +1,1 @@
+export * from './TMF620-Product_Catalog_Management-v5.0.0.oas3.json';
