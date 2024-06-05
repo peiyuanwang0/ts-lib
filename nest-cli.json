@@ -1,16 +1,8 @@
 {
-  "projects": {
-    "tmf": {
-      "type": "library",
-      "root": "libs/tmf",
-      "entryFile": "index",
-      "sourceRoot": "libs/tmf/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/tmf/tsconfig.lib.json"
-      }
-    }
-  },
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
   "compilerOptions": {
-    "webpack": true
+    "deleteOutDir": true
   }
 }
