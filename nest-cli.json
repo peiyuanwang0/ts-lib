@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "tmf": {
+      "type": "library",
+      "root": "libs/tmf",
+      "entryFile": "index",
+      "sourceRoot": "libs/tmf/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/tmf/tsconfig.lib.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": true
+  }
+}
