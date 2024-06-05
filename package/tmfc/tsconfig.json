@@ -16,9 +16,6 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false,
-    "paths": {
-        "@ts-lib/tmfc": ["./package/tmfc"]
-    }
+    "noFallthroughCasesInSwitch": false
   }
 }

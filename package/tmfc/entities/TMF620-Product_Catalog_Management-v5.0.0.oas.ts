@@ -43,7 +43,11 @@ export type AgreementRefFVO = ExtensibleFVO & EntityRefFVO;
  */
 export type AgreementRefMVO = Extensible & EntityRef;
 
-export type AllowedProductAction = Extensible & { validFor?: TimePeriod; channel?: ChannelRef[]; action?: string };
+export type AllowedProductAction = Extensible & {
+  validFor?: TimePeriod;
+  channel?: ChannelRef[];
+  action?: string;
+};
 
 export type AllowedProductActionFVO = ExtensibleFVO & {
   validFor?: TimePeriod;
@@ -51,7 +55,11 @@ export type AllowedProductActionFVO = ExtensibleFVO & {
   action: string;
 };
 
-export type AllowedProductActionMVO = Extensible & { validFor?: TimePeriod; channel?: ChannelRefMVO[]; action: string };
+export type AllowedProductActionMVO = Extensible & {
+  validFor?: TimePeriod;
+  channel?: ChannelRefMVO[];
+  action: string;
+};
 
 export type Attachment = Entity & {
   name?: string;
@@ -81,9 +89,15 @@ export type AttachmentRefOrValueFVO = AttachmentFVO | AttachmentRefFVO;
  */
 export type AttachmentRefOrValueMVO = AttachmentMVO | AttachmentRefMVO;
 
-export type AttachmentRefFVO = EntityRefFVO & { description?: string; url?: string };
+export type AttachmentRefFVO = EntityRefFVO & {
+  description?: string;
+  url?: string;
+};
 
-export type AttachmentRefMVO = EntityRef & { description?: string; url?: string };
+export type AttachmentRefMVO = EntityRef & {
+  description?: string;
+  url?: string;
+};
 
 export type AttachmentFVO = EntityFVO & {
   name?: string;
@@ -146,21 +160,27 @@ export type BaseEventMVO = EntityMVO & {
   timeOcurred?: string;
 };
 
-export type BooleanArrayCharacteristicValueSpecification = CharacteristicValueSpecification & { value?: boolean[] };
+export type BooleanArrayCharacteristicValueSpecification =
+  CharacteristicValueSpecification & { value?: boolean[] };
 
-export type BooleanArrayCharacteristicValueSpecificationFVO = CharacteristicValueSpecificationFVO & {
-  value?: boolean[];
-};
+export type BooleanArrayCharacteristicValueSpecificationFVO =
+  CharacteristicValueSpecificationFVO & {
+    value?: boolean[];
+  };
 
-export type BooleanArrayCharacteristicValueSpecificationMVO = CharacteristicValueSpecificationMVO & {
-  value?: boolean[];
-};
+export type BooleanArrayCharacteristicValueSpecificationMVO =
+  CharacteristicValueSpecificationMVO & {
+    value?: boolean[];
+  };
 
-export type BooleanCharacteristicValueSpecification = CharacteristicValueSpecification & { value?: boolean };
+export type BooleanCharacteristicValueSpecification =
+  CharacteristicValueSpecification & { value?: boolean };
 
-export type BooleanCharacteristicValueSpecificationFVO = CharacteristicValueSpecificationFVO & { value?: boolean };
+export type BooleanCharacteristicValueSpecificationFVO =
+  CharacteristicValueSpecificationFVO & { value?: boolean };
 
-export type BooleanCharacteristicValueSpecificationMVO = CharacteristicValueSpecificationMVO & { value?: boolean };
+export type BooleanCharacteristicValueSpecificationMVO =
+  CharacteristicValueSpecificationMVO & { value?: boolean };
 
 export type BundledGroupProductOffering = Extensible & {
   id?: string;
@@ -223,11 +243,17 @@ export type BundledProductOfferingOptionMVO = Extensible & {
   numberRelOfferUpperLimit?: number;
 };
 
-export type BundledProductOfferingPriceRelationship = EntityRef & { version?: string };
+export type BundledProductOfferingPriceRelationship = EntityRef & {
+  version?: string;
+};
 
-export type BundledProductOfferingPriceRelationshipFVO = EntityRefFVO & { version?: string };
+export type BundledProductOfferingPriceRelationshipFVO = EntityRefFVO & {
+  version?: string;
+};
 
-export type BundledProductOfferingPriceRelationshipMVO = EntityRef & { version?: string };
+export type BundledProductOfferingPriceRelationshipMVO = EntityRef & {
+  version?: string;
+};
 
 export type BundledProductOfferingFVO = ProductOfferingRefFVO & {
   bundledProductOfferingOption?: BundledProductOfferingOptionFVO;
@@ -307,7 +333,9 @@ export type Category = Entity & {
   name?: string;
 };
 
-export type CategoryAttributeValueChangeEvent = Event & { event?: CategoryAttributeValueChangeEventPayload };
+export type CategoryAttributeValueChangeEvent = Event & {
+  event?: CategoryAttributeValueChangeEventPayload;
+};
 
 /**
  * CategoryAttributeValueChangeEventPayload generic structure
@@ -317,7 +345,9 @@ export interface CategoryAttributeValueChangeEventPayload {
   category?: Category;
 }
 
-export type CategoryCreateEvent = Event & { event?: CategoryCreateEventPayload };
+export type CategoryCreateEvent = Event & {
+  event?: CategoryCreateEventPayload;
+};
 
 /**
  * CategoryCreateEventPayload generic structure
@@ -327,7 +357,9 @@ export interface CategoryCreateEventPayload {
   category?: Category;
 }
 
-export type CategoryDeleteEvent = Event & { event?: CategoryDeleteEventPayload };
+export type CategoryDeleteEvent = Event & {
+  event?: CategoryDeleteEventPayload;
+};
 
 /**
  * CategoryDeleteEventPayload generic structure
@@ -343,7 +375,9 @@ export type CategoryRefFVO = EntityRefFVO & { version?: string };
 
 export type CategoryRefMVO = EntityRef & { version?: string };
 
-export type CategoryStateChangeEvent = Event & { event?: CategoryStateChangeEventPayload };
+export type CategoryStateChangeEvent = Event & {
+  event?: CategoryStateChangeEventPayload;
+};
 
 /**
  * CategoryStateChangeEventPayload generic structure
@@ -400,11 +434,20 @@ export type Characteristic = Extensible & {
   characteristicRelationship?: CharacteristicRelationship[];
 };
 
-export type CharacteristicRelationship = Extensible & { id?: string; relationshipType?: string };
+export type CharacteristicRelationship = Extensible & {
+  id?: string;
+  relationshipType?: string;
+};
 
-export type CharacteristicRelationshipFVO = Extensible & { id: string; relationshipType: string };
+export type CharacteristicRelationshipFVO = Extensible & {
+  id: string;
+  relationshipType: string;
+};
 
-export type CharacteristicRelationshipMVO = Extensible & { id: string; relationshipType: string };
+export type CharacteristicRelationshipMVO = Extensible & {
+  id: string;
+  relationshipType: string;
+};
 
 export type CharacteristicSpecification = Extensible & {
   id?: string;
@@ -418,7 +461,7 @@ export type CharacteristicSpecification = Extensible & {
   isUnique?: boolean;
   regex?: string;
   extensible?: boolean;
-  "@valueSchemaLocation"?: string;
+  '@valueSchemaLocation'?: string;
   charSpecRelationship?: CharacteristicSpecificationRelationship[];
   characteristicValueSpecification?: CharacteristicValueSpecification[];
 };
@@ -462,7 +505,7 @@ export type CharacteristicSpecificationFVO = ExtensibleFVO & {
   isUnique?: boolean;
   regex?: string;
   extensible?: boolean;
-  "@valueSchemaLocation"?: string;
+  '@valueSchemaLocation'?: string;
   charSpecRelationship?: CharacteristicSpecificationRelationshipFVO[];
   characteristicValueSpecification?: CharacteristicValueSpecificationFVO[];
 };
@@ -479,7 +522,7 @@ export type CharacteristicSpecificationMVO = Extensible & {
   isUnique?: boolean;
   regex?: string;
   extensible?: boolean;
-  "@valueSchemaLocation"?: string;
+  '@valueSchemaLocation'?: string;
   charSpecRelationship?: CharacteristicSpecificationRelationshipMVO[];
   characteristicValueSpecification?: CharacteristicValueSpecificationMVO[];
 };
@@ -548,10 +591,20 @@ export interface Duration {
 export type Entity = Extensible & Addressable;
 
 export type EntityRef = Extensible &
-  Addressable & { id: string; href?: string; name?: string; "@referredType"?: string };
+  Addressable & {
+    id: string;
+    href?: string;
+    name?: string;
+    '@referredType'?: string;
+  };
 
 export type EntityRefFVO = ExtensibleFVO &
-  AddressableFVO & { id: string; href?: string; name?: string; "@referredType"?: string };
+  AddressableFVO & {
+    id: string;
+    href?: string;
+    name?: string;
+    '@referredType'?: string;
+  };
 
 /**
  * Base entity schema for use in TMForum Open-APIs. Property.
@@ -632,7 +685,9 @@ export type ExportJob = Entity & {
   id?: string;
 };
 
-export type ExportJobCreateEvent = Event & { event?: ExportJobCreateEventPayload };
+export type ExportJobCreateEvent = Event & {
+  event?: ExportJobCreateEventPayload;
+};
 
 /**
  * ExportJobCreateEventPayload generic structure
@@ -642,7 +697,9 @@ export interface ExportJobCreateEventPayload {
   exportJob?: ExportJob;
 }
 
-export type ExportJobStateChangeEvent = Event & { event?: ExportJobStateChangeEventPayload };
+export type ExportJobStateChangeEvent = Event & {
+  event?: ExportJobStateChangeEventPayload;
+};
 
 /**
  * ExportJobStateChangeEventPayload generic structure
@@ -681,13 +738,13 @@ export type ExportJobMVO = EntityMVO & {
  */
 export interface Extensible {
   /** When sub-classing, this defines the sub-class Extensible name */
-  "@type": string;
+  '@type': string;
 
   /** When sub-classing, this defines the super-class */
-  "@baseType"?: string;
+  '@baseType'?: string;
 
   /** A URI to a JSON-Schema file that defines additional attributes and relationships */
-  "@schemaLocation"?: string;
+  '@schemaLocation'?: string;
 }
 
 /**
@@ -695,32 +752,50 @@ export interface Extensible {
  */
 export interface ExtensibleFVO {
   /** When sub-classing, this defines the sub-class Extensible name */
-  "@type": string;
+  '@type': string;
 
   /** When sub-classing, this defines the super-class */
-  "@baseType"?: string;
+  '@baseType'?: string;
 
   /** A URI to a JSON-Schema file that defines additional attributes and relationships */
-  "@schemaLocation"?: string;
+  '@schemaLocation'?: string;
 }
 
-export type ExternalIdentifier = Extensible & { owner?: string; externalIdentifierType?: string; id?: string };
+export type ExternalIdentifier = Extensible & {
+  owner?: string;
+  externalIdentifierType?: string;
+  id?: string;
+};
 
-export type ExternalIdentifierFVO = ExtensibleFVO & { owner?: string; externalIdentifierType?: string; id: string };
+export type ExternalIdentifierFVO = ExtensibleFVO & {
+  owner?: string;
+  externalIdentifierType?: string;
+  id: string;
+};
 
-export type ExternalIdentifierMVO = Extensible & { owner?: string; externalIdentifierType?: string; id?: string };
+export type ExternalIdentifierMVO = Extensible & {
+  owner?: string;
+  externalIdentifierType?: string;
+  id?: string;
+};
 
-export type FloatArrayCharacteristicValueSpecification = CharacteristicValueSpecification & { value?: number[] };
+export type FloatArrayCharacteristicValueSpecification =
+  CharacteristicValueSpecification & { value?: number[] };
 
-export type FloatArrayCharacteristicValueSpecificationFVO = CharacteristicValueSpecificationFVO & { value?: number[] };
+export type FloatArrayCharacteristicValueSpecificationFVO =
+  CharacteristicValueSpecificationFVO & { value?: number[] };
 
-export type FloatArrayCharacteristicValueSpecificationMVO = CharacteristicValueSpecificationMVO & { value?: number[] };
+export type FloatArrayCharacteristicValueSpecificationMVO =
+  CharacteristicValueSpecificationMVO & { value?: number[] };
 
-export type FloatCharacteristicValueSpecification = CharacteristicValueSpecification & { value?: number };
+export type FloatCharacteristicValueSpecification =
+  CharacteristicValueSpecification & { value?: number };
 
-export type FloatCharacteristicValueSpecificationFVO = CharacteristicValueSpecificationFVO & { value?: number };
+export type FloatCharacteristicValueSpecificationFVO =
+  CharacteristicValueSpecificationFVO & { value?: number };
 
-export type FloatCharacteristicValueSpecificationMVO = CharacteristicValueSpecificationMVO & { value?: number };
+export type FloatCharacteristicValueSpecificationMVO =
+  CharacteristicValueSpecificationMVO & { value?: number };
 
 export type ImportJob = Entity & {
   completionDate?: string;
@@ -733,7 +808,9 @@ export type ImportJob = Entity & {
   id?: string;
 };
 
-export type ImportJobCreateEvent = Event & { event?: ImportJobCreateEventPayload };
+export type ImportJobCreateEvent = Event & {
+  event?: ImportJobCreateEventPayload;
+};
 
 /**
  * ImportJobCreateEventPayload generic structure
@@ -743,7 +820,9 @@ export interface ImportJobCreateEventPayload {
   importJob?: ImportJob;
 }
 
-export type ImportJobStateChangeEvent = Event & { event?: ImportJobStateChangeEventPayload };
+export type ImportJobStateChangeEvent = Event & {
+  event?: ImportJobStateChangeEventPayload;
+};
 
 /**
  * ImportJobStateChangeEventPayload generic structure
@@ -775,21 +854,27 @@ export type ImportJobMVO = EntityMVO & {
   id?: string;
 };
 
-export type IntegerArrayCharacteristicValueSpecification = CharacteristicValueSpecification & { value?: number[] };
+export type IntegerArrayCharacteristicValueSpecification =
+  CharacteristicValueSpecification & { value?: number[] };
 
-export type IntegerArrayCharacteristicValueSpecificationFVO = CharacteristicValueSpecificationFVO & {
-  value?: number[];
-};
+export type IntegerArrayCharacteristicValueSpecificationFVO =
+  CharacteristicValueSpecificationFVO & {
+    value?: number[];
+  };
 
-export type IntegerArrayCharacteristicValueSpecificationMVO = CharacteristicValueSpecificationMVO & {
-  value?: number[];
-};
+export type IntegerArrayCharacteristicValueSpecificationMVO =
+  CharacteristicValueSpecificationMVO & {
+    value?: number[];
+  };
 
-export type IntegerCharacteristicValueSpecification = CharacteristicValueSpecification & { value?: number };
+export type IntegerCharacteristicValueSpecification =
+  CharacteristicValueSpecification & { value?: number };
 
-export type IntegerCharacteristicValueSpecificationFVO = CharacteristicValueSpecificationFVO & { value?: number };
+export type IntegerCharacteristicValueSpecificationFVO =
+  CharacteristicValueSpecificationFVO & { value?: number };
 
-export type IntegerCharacteristicValueSpecificationMVO = CharacteristicValueSpecificationMVO & { value?: number };
+export type IntegerCharacteristicValueSpecificationMVO =
+  CharacteristicValueSpecificationMVO & { value?: number };
 
 export type IntentSpecificationRef = EntityRef;
 
@@ -801,33 +886,39 @@ export type IntentSpecificationRefMVO = EntityRef;
  * Valid values for the state of a batch job (e.g. catalog import)
  */
 export enum JobStateType {
-  NotStarted = "Not Started",
-  Running = "Running",
-  Succeeded = "Succeeded",
-  Failed = "Failed",
+  NotStarted = 'Not Started',
+  Running = 'Running',
+  Succeeded = 'Succeeded',
+  Failed = 'Failed',
 }
 
-export type MapArrayCharacteristicValueSpecification = CharacteristicValueSpecification & {
-  value?: { value?: Record<string, object> }[];
-};
+export type MapArrayCharacteristicValueSpecification =
+  CharacteristicValueSpecification & {
+    value?: { value?: Record<string, object> }[];
+  };
 
-export type MapArrayCharacteristicValueSpecificationFVO = CharacteristicValueSpecificationFVO & {
-  value?: { value?: Record<string, object> }[];
-};
+export type MapArrayCharacteristicValueSpecificationFVO =
+  CharacteristicValueSpecificationFVO & {
+    value?: { value?: Record<string, object> }[];
+  };
 
-export type MapArrayCharacteristicValueSpecificationMVO = CharacteristicValueSpecificationMVO & {
-  value?: { value?: Record<string, object> }[];
-};
+export type MapArrayCharacteristicValueSpecificationMVO =
+  CharacteristicValueSpecificationMVO & {
+    value?: { value?: Record<string, object> }[];
+  };
 
-export type MapCharacteristicValueSpecification = CharacteristicValueSpecification & { value?: Record<string, object> };
+export type MapCharacteristicValueSpecification =
+  CharacteristicValueSpecification & { value?: Record<string, object> };
 
-export type MapCharacteristicValueSpecificationFVO = CharacteristicValueSpecificationFVO & {
-  value?: Record<string, object>;
-};
+export type MapCharacteristicValueSpecificationFVO =
+  CharacteristicValueSpecificationFVO & {
+    value?: Record<string, object>;
+  };
 
-export type MapCharacteristicValueSpecificationMVO = CharacteristicValueSpecificationMVO & {
-  value?: Record<string, object>;
-};
+export type MapCharacteristicValueSpecificationMVO =
+  CharacteristicValueSpecificationMVO & {
+    value?: Record<string, object>;
+  };
 
 /**
  * provides references to the corresponding market segment as target of product offerings. A market segment is grouping of Parties, GeographicAreas, SalesChannels, and so forth.
@@ -858,29 +949,41 @@ export interface Money {
   value?: number;
 }
 
-export type NumberArrayCharacteristicValueSpecification = CharacteristicValueSpecification & { value?: number[] };
+export type NumberArrayCharacteristicValueSpecification =
+  CharacteristicValueSpecification & { value?: number[] };
 
-export type NumberArrayCharacteristicValueSpecificationFVO = CharacteristicValueSpecificationFVO & { value?: number[] };
+export type NumberArrayCharacteristicValueSpecificationFVO =
+  CharacteristicValueSpecificationFVO & { value?: number[] };
 
-export type NumberArrayCharacteristicValueSpecificationMVO = CharacteristicValueSpecificationMVO & { value?: number[] };
+export type NumberArrayCharacteristicValueSpecificationMVO =
+  CharacteristicValueSpecificationMVO & { value?: number[] };
 
-export type NumberCharacteristicValueSpecification = CharacteristicValueSpecification & { value?: number };
+export type NumberCharacteristicValueSpecification =
+  CharacteristicValueSpecification & { value?: number };
 
-export type NumberCharacteristicValueSpecificationFVO = CharacteristicValueSpecificationFVO & { value?: number };
+export type NumberCharacteristicValueSpecificationFVO =
+  CharacteristicValueSpecificationFVO & { value?: number };
 
-export type NumberCharacteristicValueSpecificationMVO = CharacteristicValueSpecificationMVO & { value?: number };
+export type NumberCharacteristicValueSpecificationMVO =
+  CharacteristicValueSpecificationMVO & { value?: number };
 
-export type ObjectArrayCharacteristicValueSpecification = CharacteristicValueSpecification & { value?: object[] };
+export type ObjectArrayCharacteristicValueSpecification =
+  CharacteristicValueSpecification & { value?: object[] };
 
-export type ObjectArrayCharacteristicValueSpecificationFVO = CharacteristicValueSpecificationFVO & { value?: object[] };
+export type ObjectArrayCharacteristicValueSpecificationFVO =
+  CharacteristicValueSpecificationFVO & { value?: object[] };
 
-export type ObjectArrayCharacteristicValueSpecificationMVO = CharacteristicValueSpecificationMVO & { value?: object[] };
+export type ObjectArrayCharacteristicValueSpecificationMVO =
+  CharacteristicValueSpecificationMVO & { value?: object[] };
 
-export type ObjectCharacteristicValueSpecification = CharacteristicValueSpecification & { value?: object };
+export type ObjectCharacteristicValueSpecification =
+  CharacteristicValueSpecification & { value?: object };
 
-export type ObjectCharacteristicValueSpecificationFVO = CharacteristicValueSpecificationFVO & { value?: object };
+export type ObjectCharacteristicValueSpecificationFVO =
+  CharacteristicValueSpecificationFVO & { value?: object };
 
-export type ObjectCharacteristicValueSpecificationMVO = CharacteristicValueSpecificationMVO & { value?: object };
+export type ObjectCharacteristicValueSpecificationMVO =
+  CharacteristicValueSpecificationMVO & { value?: object };
 
 /**
  * A Party reference
@@ -905,9 +1008,15 @@ export type PartyRefMVO = EntityRef;
 
 export type PartyRoleRef = EntityRef & { partyId?: string; partyName?: string };
 
-export type PartyRoleRefFVO = EntityRefFVO & { partyId?: string; partyName?: string };
+export type PartyRoleRefFVO = EntityRefFVO & {
+  partyId?: string;
+  partyName?: string;
+};
 
-export type PartyRoleRefMVO = EntityRef & { partyId?: string; partyName?: string };
+export type PartyRoleRefMVO = EntityRef & {
+  partyId?: string;
+  partyName?: string;
+};
 
 /**
  * Place reference.
@@ -928,27 +1037,27 @@ export type PolicyRef = EntityRef & {
   id?: string;
   href?: string;
   version?: string;
-  "@type"?: string;
-  "@baseType"?: string;
-  "@schemaLocation"?: string;
+  '@type'?: string;
+  '@baseType'?: string;
+  '@schemaLocation'?: string;
 };
 
 export type PolicyRefFVO = EntityRefFVO & {
   id: string;
   href?: string;
   version?: string;
-  "@type"?: string;
-  "@baseType"?: string;
-  "@schemaLocation"?: string;
+  '@type'?: string;
+  '@baseType'?: string;
+  '@schemaLocation'?: string;
 };
 
 export type PolicyRefMVO = EntityRef & {
   id?: string;
   href?: string;
   version?: string;
-  "@type"?: string;
-  "@baseType"?: string;
-  "@schemaLocation"?: string;
+  '@type'?: string;
+  '@baseType'?: string;
+  '@schemaLocation'?: string;
 };
 
 export type PricingLogicAlgorithm = Entity & {
@@ -986,7 +1095,9 @@ export interface ProductCatalogAttributeValueChangeEventPayload {
   productCatalog?: ProductCatalog;
 }
 
-export type ProductCatalogCreateEvent = Event & { event?: ProductCatalogCreateEventPayload };
+export type ProductCatalogCreateEvent = Event & {
+  event?: ProductCatalogCreateEventPayload;
+};
 
 /**
  * ProductCatalogCreateEventPayload generic structure
@@ -996,7 +1107,9 @@ export interface ProductCatalogCreateEventPayload {
   productCatalog?: ProductCatalog;
 }
 
-export type ProductCatalogDeleteEvent = Event & { event?: ProductCatalogDeleteEventPayload };
+export type ProductCatalogDeleteEvent = Event & {
+  event?: ProductCatalogDeleteEventPayload;
+};
 
 /**
  * ProductCatalogDeleteEventPayload generic structure
@@ -1006,7 +1119,9 @@ export interface ProductCatalogDeleteEventPayload {
   productCatalog?: ProductCatalog;
 }
 
-export type ProductCatalogStateChangeEvent = Event & { event?: ProductCatalogStateChangeEventPayload };
+export type ProductCatalogStateChangeEvent = Event & {
+  event?: ProductCatalogStateChangeEventPayload;
+};
 
 /**
  * ProductCatalogStateChangeEventPayload generic structure
@@ -1064,7 +1179,9 @@ export interface ProductOfferingAttributeValueChangeEventPayload {
   productOffering?: ProductOffering;
 }
 
-export type ProductOfferingCreateEvent = Event & { event?: ProductOfferingCreateEventPayload };
+export type ProductOfferingCreateEvent = Event & {
+  event?: ProductOfferingCreateEventPayload;
+};
 
 /**
  * ProductOfferingCreateEventPayload generic structure
@@ -1074,7 +1191,9 @@ export interface ProductOfferingCreateEventPayload {
   productOffering?: ProductOffering;
 }
 
-export type ProductOfferingDeleteEvent = Event & { event?: ProductOfferingDeleteEventPayload };
+export type ProductOfferingDeleteEvent = Event & {
+  event?: ProductOfferingDeleteEventPayload;
+};
 
 /**
  * ProductOfferingDeleteEventPayload generic structure
@@ -1121,7 +1240,9 @@ export interface ProductOfferingPriceAttributeValueChangeEventPayload {
   productOfferingPrice?: ProductOfferingPrice;
 }
 
-export type ProductOfferingPriceCreateEvent = Event & { event?: ProductOfferingPriceCreateEventPayload };
+export type ProductOfferingPriceCreateEvent = Event & {
+  event?: ProductOfferingPriceCreateEventPayload;
+};
 
 /**
  * ProductOfferingPriceCreateEventPayload generic structure
@@ -1131,7 +1252,9 @@ export interface ProductOfferingPriceCreateEventPayload {
   productOfferingPrice?: ProductOfferingPrice;
 }
 
-export type ProductOfferingPriceDeleteEvent = Event & { event?: ProductOfferingPriceDeleteEventPayload };
+export type ProductOfferingPriceDeleteEvent = Event & {
+  event?: ProductOfferingPriceDeleteEventPayload;
+};
 
 /**
  * ProductOfferingPriceDeleteEventPayload generic structure
@@ -1146,17 +1269,23 @@ export type ProductOfferingPriceRef = EntityRef & { version?: string };
 /**
  * The polymorphic attributes @type, @schemaLocation & @referredType are related to the ProductOfferingPrice entity and not the ProductOfferingPriceRefOrValue class itself
  */
-export type ProductOfferingPriceRefOrValue = ProductOfferingPrice | ProductOfferingPriceRef;
+export type ProductOfferingPriceRefOrValue =
+  | ProductOfferingPrice
+  | ProductOfferingPriceRef;
 
 /**
  * The polymorphic attributes @type, @schemaLocation & @referredType are related to the ProductOfferingPrice entity and not the ProductOfferingPriceRefOrValue class itself
  */
-export type ProductOfferingPriceRefOrValueFVO = ProductOfferingPriceFVO | ProductOfferingPriceRefFVO;
+export type ProductOfferingPriceRefOrValueFVO =
+  | ProductOfferingPriceFVO
+  | ProductOfferingPriceRefFVO;
 
 /**
  * The polymorphic attributes @type, @schemaLocation & @referredType are related to the ProductOfferingPrice entity and not the ProductOfferingPriceRefOrValue class itself
  */
-export type ProductOfferingPriceRefOrValueMVO = ProductOfferingPriceMVO | ProductOfferingPriceRefMVO;
+export type ProductOfferingPriceRefOrValueMVO =
+  | ProductOfferingPriceMVO
+  | ProductOfferingPriceRefMVO;
 
 export type ProductOfferingPriceRefFVO = EntityRefFVO & { version?: string };
 
@@ -1180,7 +1309,9 @@ export type ProductOfferingPriceRelationshipMVO = EntityRef & {
   version?: string;
 };
 
-export type ProductOfferingPriceStateChangeEvent = Event & { event?: ProductOfferingPriceStateChangeEventPayload };
+export type ProductOfferingPriceStateChangeEvent = Event & {
+  event?: ProductOfferingPriceStateChangeEventPayload;
+};
 
 /**
  * ProductOfferingPriceStateChangeEventPayload generic structure
@@ -1269,7 +1400,9 @@ export type ProductOfferingRelationshipMVO = EntityRef & {
   version?: string;
 };
 
-export type ProductOfferingStateChangeEvent = Event & { event?: ProductOfferingStateChangeEventPayload };
+export type ProductOfferingStateChangeEvent = Event & {
+  event?: ProductOfferingStateChangeEventPayload;
+};
 
 /**
  * ProductOfferingStateChangeEventPayload generic structure
@@ -1435,7 +1568,9 @@ export type ProductSpecificationCharacteristicValueUseMVO = Extensible & {
   productSpecification?: ProductSpecificationRefMVO;
 };
 
-export type ProductSpecificationCreateEvent = Event & { event?: ProductSpecificationCreateEventPayload };
+export type ProductSpecificationCreateEvent = Event & {
+  event?: ProductSpecificationCreateEventPayload;
+};
 
 /**
  * ProductSpecificationCreateEventPayload generic structure
@@ -1445,7 +1580,9 @@ export interface ProductSpecificationCreateEventPayload {
   productSpecification?: ProductSpecification;
 }
 
-export type ProductSpecificationDeleteEvent = Event & { event?: ProductSpecificationDeleteEventPayload };
+export type ProductSpecificationDeleteEvent = Event & {
+  event?: ProductSpecificationDeleteEventPayload;
+};
 
 /**
  * ProductSpecificationDeleteEventPayload generic structure
@@ -1455,14 +1592,20 @@ export interface ProductSpecificationDeleteEventPayload {
   productSpecification?: ProductSpecification;
 }
 
-export type ProductSpecificationRef = EntityRef & { version?: string; targetProductSchema?: TargetProductSchema };
+export type ProductSpecificationRef = EntityRef & {
+  version?: string;
+  targetProductSchema?: TargetProductSchema;
+};
 
 export type ProductSpecificationRefFVO = EntityRefFVO & {
   version?: string;
   targetProductSchema?: TargetProductSchemaFVO;
 };
 
-export type ProductSpecificationRefMVO = EntityRef & { version?: string; targetProductSchema?: TargetProductSchemaMVO };
+export type ProductSpecificationRefMVO = EntityRef & {
+  version?: string;
+  targetProductSchema?: TargetProductSchemaMVO;
+};
 
 export type ProductSpecificationRelationship = EntityRef & {
   characteristic?: CharacteristicSpecification[];
@@ -1485,7 +1628,9 @@ export type ProductSpecificationRelationshipMVO = EntityRef & {
   version?: string;
 };
 
-export type ProductSpecificationStateChangeEvent = Event & { event?: ProductSpecificationStateChangeEventPayload };
+export type ProductSpecificationStateChangeEvent = Event & {
+  event?: ProductSpecificationStateChangeEventPayload;
+};
 
 /**
  * ProductSpecificationStateChangeEventPayload generic structure
@@ -1556,7 +1701,10 @@ export interface Quantity {
   units?: string;
 }
 
-export type RelatedPartyRefOrPartyRoleRef = Extensible & { role?: string; partyOrPartyRole?: PartyRefOrPartyRoleRef };
+export type RelatedPartyRefOrPartyRoleRef = Extensible & {
+  role?: string;
+  partyOrPartyRole?: PartyRefOrPartyRoleRef;
+};
 
 export type RelatedPartyRefOrPartyRoleRefFVO = ExtensibleFVO & {
   role: string;
@@ -1597,40 +1745,51 @@ export type SLARefMVO = Extensible & EntityRef & EntityMVO;
 
 export type ServiceCandidateRef = Extensible & EntityRef & { version?: string };
 
-export type ServiceCandidateRefFVO = ExtensibleFVO & EntityRefFVO & { version?: string };
+export type ServiceCandidateRefFVO = ExtensibleFVO &
+  EntityRefFVO & { version?: string };
 
-export type ServiceCandidateRefMVO = Extensible & EntityRef & { version?: string };
+export type ServiceCandidateRefMVO = Extensible &
+  EntityRef & { version?: string };
 
-export type ServiceSpecificationRef = Extensible & EntityRef & { version?: string };
+export type ServiceSpecificationRef = Extensible &
+  EntityRef & { version?: string };
 
-export type ServiceSpecificationRefFVO = ExtensibleFVO & EntityRefFVO & { version?: string };
+export type ServiceSpecificationRefFVO = ExtensibleFVO &
+  EntityRefFVO & { version?: string };
 
-export type ServiceSpecificationRefMVO = Extensible & EntityRef & { version?: string };
+export type ServiceSpecificationRefMVO = Extensible &
+  EntityRef & { version?: string };
 
-export type StringArrayCharacteristicValueSpecification = CharacteristicValueSpecification & { value?: string[] };
+export type StringArrayCharacteristicValueSpecification =
+  CharacteristicValueSpecification & { value?: string[] };
 
-export type StringArrayCharacteristicValueSpecificationFVO = CharacteristicValueSpecificationFVO & { value?: string[] };
+export type StringArrayCharacteristicValueSpecificationFVO =
+  CharacteristicValueSpecificationFVO & { value?: string[] };
 
-export type StringArrayCharacteristicValueSpecificationMVO = CharacteristicValueSpecificationMVO & { value?: string[] };
+export type StringArrayCharacteristicValueSpecificationMVO =
+  CharacteristicValueSpecificationMVO & { value?: string[] };
 
-export type StringCharacteristicValueSpecification = CharacteristicValueSpecification & { value?: string };
+export type StringCharacteristicValueSpecification =
+  CharacteristicValueSpecification & { value?: string };
 
-export type StringCharacteristicValueSpecificationFVO = CharacteristicValueSpecificationFVO & { value?: string };
+export type StringCharacteristicValueSpecificationFVO =
+  CharacteristicValueSpecificationFVO & { value?: string };
 
-export type StringCharacteristicValueSpecificationMVO = CharacteristicValueSpecificationMVO & { value?: string };
+export type StringCharacteristicValueSpecificationMVO =
+  CharacteristicValueSpecificationMVO & { value?: string };
 
 /**
  * The reference object to the schema and type of target product which is described by product specification
  */
 export interface TargetProductSchema {
   /** Class type of the target product */
-  "@type"?: string;
+  '@type'?: string;
 
   /**
    * This field provides a link to the schema describing the target product
    * @format uri
    */
-  "@schemaLocation"?: string;
+  '@schemaLocation'?: string;
 }
 
 /**
@@ -1638,13 +1797,13 @@ export interface TargetProductSchema {
  */
 export interface TargetProductSchemaFVO {
   /** Class type of the target product */
-  "@type": string;
+  '@type': string;
 
   /**
    * This field provides a link to the schema describing the target product
    * @format uri
    */
-  "@schemaLocation": string;
+  '@schemaLocation': string;
 }
 
 /**
@@ -1652,20 +1811,32 @@ export interface TargetProductSchemaFVO {
  */
 export interface TargetProductSchemaMVO {
   /** Class type of the target product */
-  "@type"?: string;
+  '@type'?: string;
 
   /**
    * This field provides a link to the schema describing the target product
    * @format uri
    */
-  "@schemaLocation"?: string;
+  '@schemaLocation'?: string;
 }
 
-export type TaxItem = Extensible & { taxAmount?: Money; taxCategory?: string; taxRate?: number };
+export type TaxItem = Extensible & {
+  taxAmount?: Money;
+  taxCategory?: string;
+  taxRate?: number;
+};
 
-export type TaxItemFVO = ExtensibleFVO & { taxAmount?: Money; taxCategory?: string; taxRate?: number };
+export type TaxItemFVO = ExtensibleFVO & {
+  taxAmount?: Money;
+  taxCategory?: string;
+  taxRate?: number;
+};
 
-export type TaxItemMVO = Extensible & { taxAmount?: Money; taxCategory?: string; taxRate?: number };
+export type TaxItemMVO = Extensible & {
+  taxAmount?: Money;
+  taxCategory?: string;
+  taxRate?: number;
+};
 
 /**
  * A period of time, either as a deadline (endDateTime only) a startDateTime only, or both
@@ -1712,7 +1883,7 @@ export type Hub = Entity & { id?: string; callback: string; query?: string };
  */
 export interface JsonPatch {
   /** The operation to be performed */
-  op: "add" | "remove" | "replace" | "move" | "copy" | "test";
+  op: 'add' | 'remove' | 'replace' | 'move' | 'copy' | 'test';
 
   /** A JSON-Pointer */
   path: string;
@@ -1730,9 +1901,9 @@ export interface JsonPatch {
 export type JsonPatchOperations = JsonPatch[];
 
 export type QueryParamsType = Record<string | number, any>;
-export type ResponseFormat = keyof Omit<Body, "body" | "bodyUsed">;
+export type ResponseFormat = keyof Omit<Body, 'body' | 'bodyUsed'>;
 
-export interface FullRequestParams extends Omit<RequestInit, "body"> {
+export interface FullRequestParams extends Omit<RequestInit, 'body'> {
   /** set parameter to `true` for call `securityWorker` for this request */
   secure?: boolean;
   /** request path */
@@ -1742,7 +1913,7 @@ export interface FullRequestParams extends Omit<RequestInit, "body"> {
   /** query params */
   query?: QueryParamsType;
   /** format of response (i.e. response.json() -> format: "json") */
-  format?: keyof Omit<Body, "body" | "bodyUsed">;
+  format?: keyof Omit<Body, 'body' | 'bodyUsed'>;
   /** request body */
   body?: unknown;
   /** base url */
@@ -1751,15 +1922,19 @@ export interface FullRequestParams extends Omit<RequestInit, "body"> {
   cancelToken?: CancelToken;
 }
 
-export type RequestParams = Omit<FullRequestParams, "body" | "method" | "query" | "path">;
+export type RequestParams = Omit<
+  FullRequestParams,
+  'body' | 'method' | 'query' | 'path'
+>;
 
 interface ApiConfig<SecurityDataType = unknown> {
   baseUrl?: string;
-  baseApiParams?: Omit<RequestParams, "baseUrl" | "cancelToken" | "signal">;
+  baseApiParams?: Omit<RequestParams, 'baseUrl' | 'cancelToken' | 'signal'>;
   securityWorker?: (securityData: SecurityDataType) => RequestParams | void;
 }
 
-interface HttpResponse<D extends unknown, E extends unknown = unknown> extends Response {
+interface HttpResponse<D extends unknown, E extends unknown = unknown>
+  extends Response {
   data: D;
   error: E;
 }
@@ -1767,22 +1942,23 @@ interface HttpResponse<D extends unknown, E extends unknown = unknown> extends R
 type CancelToken = Symbol | string | number;
 
 export enum ContentType {
-  Json = "application/json",
-  FormData = "multipart/form-data",
-  UrlEncoded = "application/x-www-form-urlencoded",
+  Json = 'application/json',
+  FormData = 'multipart/form-data',
+  UrlEncoded = 'application/x-www-form-urlencoded',
 }
 
 export class HttpClient<SecurityDataType = unknown> {
-  public baseUrl: string = "https://serverRoot/productCatalogManagement/v5/";
+  public baseUrl: string = 'https://serverRoot/productCatalogManagement/v5/';
   private securityData: SecurityDataType = null as any;
-  private securityWorker: null | ApiConfig<SecurityDataType>["securityWorker"] = null;
+  private securityWorker: null | ApiConfig<SecurityDataType>['securityWorker'] =
+    null;
   private abortControllers = new Map<CancelToken, AbortController>();
 
   private baseApiParams: RequestParams = {
-    credentials: "same-origin",
+    credentials: 'same-origin',
     headers: {},
-    redirect: "follow",
-    referrerPolicy: "no-referrer",
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
   };
 
   constructor(apiConfig: ApiConfig<SecurityDataType> = {}) {
@@ -1798,30 +1974,41 @@ export class HttpClient<SecurityDataType = unknown> {
 
     return (
       encodeURIComponent(key) +
-      "=" +
-      encodeURIComponent(Array.isArray(value) ? value.join(",") : typeof value === "number" ? value : `${value}`)
+      '=' +
+      encodeURIComponent(
+        Array.isArray(value)
+          ? value.join(',')
+          : typeof value === 'number'
+          ? value
+          : `${value}`,
+      )
     );
   }
 
   protected toQueryString(rawQuery?: QueryParamsType): string {
     const query = rawQuery || {};
-    const keys = Object.keys(query).filter((key) => "undefined" !== typeof query[key]);
+    const keys = Object.keys(query).filter(
+      (key) => 'undefined' !== typeof query[key],
+    );
     return keys
       .map((key) =>
-        typeof query[key] === "object" && !Array.isArray(query[key])
+        typeof query[key] === 'object' && !Array.isArray(query[key])
           ? this.toQueryString(query[key] as QueryParamsType)
           : this.addQueryParam(query, key),
       )
-      .join("&");
+      .join('&');
   }
 
   protected addQueryParams(rawQuery?: QueryParamsType): string {
     const queryString = this.toQueryString(rawQuery);
-    return queryString ? `?${queryString}` : "";
+    return queryString ? `?${queryString}` : '';
   }
 
   private contentFormatters: Record<ContentType, (input: any) => any> = {
-    [ContentType.Json]: (input: any) => (input !== null && typeof input === "object" ? JSON.stringify(input) : input),
+    [ContentType.Json]: (input: any) =>
+      input !== null && typeof input === 'object'
+        ? JSON.stringify(input)
+        : input,
     [ContentType.FormData]: (input: any) =>
       Object.keys(input || {}).reduce((data, key) => {
         data.append(key, input[key]);
@@ -1830,7 +2017,10 @@ export class HttpClient<SecurityDataType = unknown> {
     [ContentType.UrlEncoded]: (input: any) => this.toQueryString(input),
   };
 
-  private mergeRequestParams(params1: RequestParams, params2?: RequestParams): RequestParams {
+  private mergeRequestParams(
+    params1: RequestParams,
+    params2?: RequestParams,
+  ): RequestParams {
     return {
       ...this.baseApiParams,
       ...params1,
@@ -1843,7 +2033,9 @@ export class HttpClient<SecurityDataType = unknown> {
     };
   }
 
-  private createAbortSignal = (cancelToken: CancelToken): AbortSignal | undefined => {
+  private createAbortSignal = (
+    cancelToken: CancelToken,
+  ): AbortSignal | undefined => {
     if (this.abortControllers.has(cancelToken)) {
       const abortController = this.abortControllers.get(cancelToken);
       if (abortController) {
@@ -1872,25 +2064,37 @@ export class HttpClient<SecurityDataType = unknown> {
     path,
     type,
     query,
-    format = "json",
+    format = 'json',
     baseUrl,
     cancelToken,
     ...params
   }: FullRequestParams): Promise<HttpResponse<T, E>> => {
-    const secureParams = (secure && this.securityWorker && this.securityWorker(this.securityData)) || {};
+    const secureParams =
+      (secure &&
+        this.securityWorker &&
+        this.securityWorker(this.securityData)) ||
+      {};
     const requestParams = this.mergeRequestParams(params, secureParams);
     const queryString = query && this.toQueryString(query);
     const payloadFormatter = this.contentFormatters[type || ContentType.Json];
 
-    return fetch(`${baseUrl || this.baseUrl || ""}${path}${queryString ? `?${queryString}` : ""}`, {
-      headers: {
-        ...(type ? { "Content-Type": type } : {}),
-        ...(requestParams.headers || {}),
+    return fetch(
+      `${baseUrl || this.baseUrl || ''}${path}${
+        queryString ? `?${queryString}` : ''
+      }`,
+      {
+        headers: {
+          ...(type ? { 'Content-Type': type } : {}),
+          ...(requestParams.headers || {}),
+        },
+        ...requestParams,
+        signal: cancelToken ? this.createAbortSignal(cancelToken) : void 0,
+        body:
+          typeof body === 'undefined' || body === null
+            ? null
+            : payloadFormatter(body),
       },
-      ...requestParams,
-      signal: cancelToken ? this.createAbortSignal(cancelToken) : void 0,
-      body: typeof body === "undefined" || body === null ? null : payloadFormatter(body),
-    }).then(async (response) => {
+    ).then(async (response) => {
       const r = response as HttpResponse<T, E>;
       r.data = null as unknown as T;
       r.error = null as unknown as E;
@@ -1932,7 +2136,9 @@ export class HttpClient<SecurityDataType = unknown> {
  * - Delete an entity
  * - Manage notification of events
  */
-export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDataType> {
+export class Api<
+  SecurityDataType extends unknown,
+> extends HttpClient<SecurityDataType> {
   category = {
     /**
      * @description List or find Category objects
@@ -1942,10 +2148,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary List or find Category objects
      * @request GET:/category
      */
-    listCategory: (query?: { fields?: string; offset?: number; limit?: number }, params: RequestParams = {}) =>
+    listCategory: (
+      query?: { fields?: string; offset?: number; limit?: number },
+      params: RequestParams = {},
+    ) =>
       this.request<Category[], Error>({
         path: `/category`,
-        method: "GET",
+        method: 'GET',
         query: query,
         ...params,
       }),
@@ -1958,10 +2167,14 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Creates a Category
      * @request POST:/category
      */
-    createCategory: (data: CategoryFVO, query?: { fields?: string }, params: RequestParams = {}) =>
+    createCategory: (
+      data: CategoryFVO,
+      query?: { fields?: string },
+      params: RequestParams = {},
+    ) =>
       this.request<Category, Error>({
         path: `/category`,
-        method: "POST",
+        method: 'POST',
         query: query,
         body: data,
         ...params,
@@ -1975,10 +2188,14 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Retrieves a Category by ID
      * @request GET:/category/{id}
      */
-    retrieveCategory: (id: string, query?: { fields?: string }, params: RequestParams = {}) =>
+    retrieveCategory: (
+      id: string,
+      query?: { fields?: string },
+      params: RequestParams = {},
+    ) =>
       this.request<Category, Error>({
         path: `/category/${id}`,
-        method: "GET",
+        method: 'GET',
         query: query,
         ...params,
       }),
@@ -1991,10 +2208,15 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Updates partially a Category
      * @request PATCH:/category/{id}
      */
-    patchCategory: (id: string, data: CategoryMVO, query?: { fields?: string }, params: RequestParams = {}) =>
+    patchCategory: (
+      id: string,
+      data: CategoryMVO,
+      query?: { fields?: string },
+      params: RequestParams = {},
+    ) =>
       this.request<Category, Error>({
         path: `/category/${id}`,
-        method: "PATCH",
+        method: 'PATCH',
         query: query,
         body: data,
         ...params,
@@ -2011,7 +2233,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     deleteCategory: (id: string, params: RequestParams = {}) =>
       this.request<any, Error>({
         path: `/category/${id}`,
-        method: "DELETE",
+        method: 'DELETE',
         ...params,
       }),
   };
@@ -2024,10 +2246,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary List or find ExportJob objects
      * @request GET:/exportJob
      */
-    listExportJob: (query?: { fields?: string; offset?: number; limit?: number }, params: RequestParams = {}) =>
+    listExportJob: (
+      query?: { fields?: string; offset?: number; limit?: number },
+      params: RequestParams = {},
+    ) =>
       this.request<ExportJob[], Error>({
         path: `/exportJob`,
-        method: "GET",
+        method: 'GET',
         query: query,
         ...params,
       }),
@@ -2040,10 +2265,14 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Creates a ExportJob
      * @request POST:/exportJob
      */
-    createExportJob: (data: ExportJobFVO, query?: { fields?: string }, params: RequestParams = {}) =>
+    createExportJob: (
+      data: ExportJobFVO,
+      query?: { fields?: string },
+      params: RequestParams = {},
+    ) =>
       this.request<ExportJob, Error>({
         path: `/exportJob`,
-        method: "POST",
+        method: 'POST',
         query: query,
         body: data,
         ...params,
@@ -2057,10 +2286,14 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Retrieves a ExportJob by ID
      * @request GET:/exportJob/{id}
      */
-    retrieveExportJob: (id: string, query?: { fields?: string }, params: RequestParams = {}) =>
+    retrieveExportJob: (
+      id: string,
+      query?: { fields?: string },
+      params: RequestParams = {},
+    ) =>
       this.request<ExportJob, Error>({
         path: `/exportJob/${id}`,
-        method: "GET",
+        method: 'GET',
         query: query,
         ...params,
       }),
@@ -2076,7 +2309,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     deleteExportJob: (id: string, params: RequestParams = {}) =>
       this.request<any, Error>({
         path: `/exportJob/${id}`,
-        method: "DELETE",
+        method: 'DELETE',
         ...params,
       }),
   };
@@ -2092,7 +2325,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     createHub: (data: HubFVO, params: RequestParams = {}) =>
       this.request<Hub, Error>({
         path: `/hub`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2108,7 +2341,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     hubDelete: (id: string, params: RequestParams = {}) =>
       this.request<void, Error>({
         path: `/hub/${id}`,
-        method: "DELETE",
+        method: 'DELETE',
         ...params,
       }),
   };
@@ -2121,10 +2354,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary List or find ImportJob objects
      * @request GET:/importJob
      */
-    listImportJob: (query?: { fields?: string; offset?: number; limit?: number }, params: RequestParams = {}) =>
+    listImportJob: (
+      query?: { fields?: string; offset?: number; limit?: number },
+      params: RequestParams = {},
+    ) =>
       this.request<ImportJob[], Error>({
         path: `/importJob`,
-        method: "GET",
+        method: 'GET',
         query: query,
         ...params,
       }),
@@ -2137,10 +2373,14 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Creates a ImportJob
      * @request POST:/importJob
      */
-    createImportJob: (data: ImportJobFVO, query?: { fields?: string }, params: RequestParams = {}) =>
+    createImportJob: (
+      data: ImportJobFVO,
+      query?: { fields?: string },
+      params: RequestParams = {},
+    ) =>
       this.request<ImportJob, Error>({
         path: `/importJob`,
-        method: "POST",
+        method: 'POST',
         query: query,
         body: data,
         ...params,
@@ -2154,10 +2394,14 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Retrieves a ImportJob by ID
      * @request GET:/importJob/{id}
      */
-    retrieveImportJob: (id: string, query?: { fields?: string }, params: RequestParams = {}) =>
+    retrieveImportJob: (
+      id: string,
+      query?: { fields?: string },
+      params: RequestParams = {},
+    ) =>
       this.request<ImportJob, Error>({
         path: `/importJob/${id}`,
-        method: "GET",
+        method: 'GET',
         query: query,
         ...params,
       }),
@@ -2173,7 +2417,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     deleteImportJob: (id: string, params: RequestParams = {}) =>
       this.request<any, Error>({
         path: `/importJob/${id}`,
-        method: "DELETE",
+        method: 'DELETE',
         ...params,
       }),
   };
@@ -2186,10 +2430,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Client listener for entity CategoryAttributeValueChangeEvent
      * @request POST:/listener/categoryAttributeValueChangeEvent
      */
-    categoryAttributeValueChangeEvent: (data: CategoryAttributeValueChangeEvent, params: RequestParams = {}) =>
+    categoryAttributeValueChangeEvent: (
+      data: CategoryAttributeValueChangeEvent,
+      params: RequestParams = {},
+    ) =>
       this.request<void, Error>({
         path: `/listener/categoryAttributeValueChangeEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2202,10 +2449,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Client listener for entity CategoryCreateEvent
      * @request POST:/listener/categoryCreateEvent
      */
-    categoryCreateEvent: (data: CategoryCreateEvent, params: RequestParams = {}) =>
+    categoryCreateEvent: (
+      data: CategoryCreateEvent,
+      params: RequestParams = {},
+    ) =>
       this.request<void, Error>({
         path: `/listener/categoryCreateEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2218,10 +2468,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Client listener for entity CategoryDeleteEvent
      * @request POST:/listener/categoryDeleteEvent
      */
-    categoryDeleteEvent: (data: CategoryDeleteEvent, params: RequestParams = {}) =>
+    categoryDeleteEvent: (
+      data: CategoryDeleteEvent,
+      params: RequestParams = {},
+    ) =>
       this.request<void, Error>({
         path: `/listener/categoryDeleteEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2234,10 +2487,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Client listener for entity CategoryStateChangeEvent
      * @request POST:/listener/categoryStateChangeEvent
      */
-    categoryStateChangeEvent: (data: CategoryStateChangeEvent, params: RequestParams = {}) =>
+    categoryStateChangeEvent: (
+      data: CategoryStateChangeEvent,
+      params: RequestParams = {},
+    ) =>
       this.request<void, Error>({
         path: `/listener/categoryStateChangeEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2250,10 +2506,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Client listener for entity ExportJobCreateEvent
      * @request POST:/listener/exportJobCreateEvent
      */
-    exportJobCreateEvent: (data: ExportJobCreateEvent, params: RequestParams = {}) =>
+    exportJobCreateEvent: (
+      data: ExportJobCreateEvent,
+      params: RequestParams = {},
+    ) =>
       this.request<void, Error>({
         path: `/listener/exportJobCreateEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2266,10 +2525,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Client listener for entity ExportJobStateChangeEvent
      * @request POST:/listener/exportJobStateChangeEvent
      */
-    exportJobStateChangeEvent: (data: ExportJobStateChangeEvent, params: RequestParams = {}) =>
+    exportJobStateChangeEvent: (
+      data: ExportJobStateChangeEvent,
+      params: RequestParams = {},
+    ) =>
       this.request<void, Error>({
         path: `/listener/exportJobStateChangeEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2282,10 +2544,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Client listener for entity ImportJobCreateEvent
      * @request POST:/listener/importJobCreateEvent
      */
-    importJobCreateEvent: (data: ImportJobCreateEvent, params: RequestParams = {}) =>
+    importJobCreateEvent: (
+      data: ImportJobCreateEvent,
+      params: RequestParams = {},
+    ) =>
       this.request<void, Error>({
         path: `/listener/importJobCreateEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2298,10 +2563,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Client listener for entity ImportJobStateChangeEvent
      * @request POST:/listener/importJobStateChangeEvent
      */
-    importJobStateChangeEvent: (data: ImportJobStateChangeEvent, params: RequestParams = {}) =>
+    importJobStateChangeEvent: (
+      data: ImportJobStateChangeEvent,
+      params: RequestParams = {},
+    ) =>
       this.request<void, Error>({
         path: `/listener/importJobStateChangeEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2320,7 +2588,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     ) =>
       this.request<void, Error>({
         path: `/listener/productCatalogAttributeValueChangeEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2333,10 +2601,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Client listener for entity ProductCatalogCreateEvent
      * @request POST:/listener/productCatalogCreateEvent
      */
-    productCatalogCreateEvent: (data: ProductCatalogCreateEvent, params: RequestParams = {}) =>
+    productCatalogCreateEvent: (
+      data: ProductCatalogCreateEvent,
+      params: RequestParams = {},
+    ) =>
       this.request<void, Error>({
         path: `/listener/productCatalogCreateEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2349,10 +2620,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Client listener for entity ProductCatalogDeleteEvent
      * @request POST:/listener/productCatalogDeleteEvent
      */
-    productCatalogDeleteEvent: (data: ProductCatalogDeleteEvent, params: RequestParams = {}) =>
+    productCatalogDeleteEvent: (
+      data: ProductCatalogDeleteEvent,
+      params: RequestParams = {},
+    ) =>
       this.request<void, Error>({
         path: `/listener/productCatalogDeleteEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2365,10 +2639,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Client listener for entity ProductCatalogStateChangeEvent
      * @request POST:/listener/productCatalogStateChangeEvent
      */
-    productCatalogStateChangeEvent: (data: ProductCatalogStateChangeEvent, params: RequestParams = {}) =>
+    productCatalogStateChangeEvent: (
+      data: ProductCatalogStateChangeEvent,
+      params: RequestParams = {},
+    ) =>
       this.request<void, Error>({
         path: `/listener/productCatalogStateChangeEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2387,7 +2664,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     ) =>
       this.request<void, Error>({
         path: `/listener/productOfferingAttributeValueChangeEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2400,10 +2677,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Client listener for entity ProductOfferingCreateEvent
      * @request POST:/listener/productOfferingCreateEvent
      */
-    productOfferingCreateEvent: (data: ProductOfferingCreateEvent, params: RequestParams = {}) =>
+    productOfferingCreateEvent: (
+      data: ProductOfferingCreateEvent,
+      params: RequestParams = {},
+    ) =>
       this.request<void, Error>({
         path: `/listener/productOfferingCreateEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2416,10 +2696,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Client listener for entity ProductOfferingDeleteEvent
      * @request POST:/listener/productOfferingDeleteEvent
      */
-    productOfferingDeleteEvent: (data: ProductOfferingDeleteEvent, params: RequestParams = {}) =>
+    productOfferingDeleteEvent: (
+      data: ProductOfferingDeleteEvent,
+      params: RequestParams = {},
+    ) =>
       this.request<void, Error>({
         path: `/listener/productOfferingDeleteEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2438,7 +2721,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     ) =>
       this.request<void, Error>({
         path: `/listener/productOfferingPriceAttributeValueChangeEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2451,10 +2734,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Client listener for entity ProductOfferingPriceCreateEvent
      * @request POST:/listener/productOfferingPriceCreateEvent
      */
-    productOfferingPriceCreateEvent: (data: ProductOfferingPriceCreateEvent, params: RequestParams = {}) =>
+    productOfferingPriceCreateEvent: (
+      data: ProductOfferingPriceCreateEvent,
+      params: RequestParams = {},
+    ) =>
       this.request<void, Error>({
         path: `/listener/productOfferingPriceCreateEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2467,10 +2753,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Client listener for entity ProductOfferingPriceDeleteEvent
      * @request POST:/listener/productOfferingPriceDeleteEvent
      */
-    productOfferingPriceDeleteEvent: (data: ProductOfferingPriceDeleteEvent, params: RequestParams = {}) =>
+    productOfferingPriceDeleteEvent: (
+      data: ProductOfferingPriceDeleteEvent,
+      params: RequestParams = {},
+    ) =>
       this.request<void, Error>({
         path: `/listener/productOfferingPriceDeleteEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2483,10 +2772,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Client listener for entity ProductOfferingPriceStateChangeEvent
      * @request POST:/listener/productOfferingPriceStateChangeEvent
      */
-    productOfferingPriceStateChangeEvent: (data: ProductOfferingPriceStateChangeEvent, params: RequestParams = {}) =>
+    productOfferingPriceStateChangeEvent: (
+      data: ProductOfferingPriceStateChangeEvent,
+      params: RequestParams = {},
+    ) =>
       this.request<void, Error>({
         path: `/listener/productOfferingPriceStateChangeEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2499,10 +2791,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Client listener for entity ProductOfferingStateChangeEvent
      * @request POST:/listener/productOfferingStateChangeEvent
      */
-    productOfferingStateChangeEvent: (data: ProductOfferingStateChangeEvent, params: RequestParams = {}) =>
+    productOfferingStateChangeEvent: (
+      data: ProductOfferingStateChangeEvent,
+      params: RequestParams = {},
+    ) =>
       this.request<void, Error>({
         path: `/listener/productOfferingStateChangeEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2521,7 +2816,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     ) =>
       this.request<void, Error>({
         path: `/listener/productSpecificationAttributeValueChangeEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2534,10 +2829,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Client listener for entity ProductSpecificationCreateEvent
      * @request POST:/listener/productSpecificationCreateEvent
      */
-    productSpecificationCreateEvent: (data: ProductSpecificationCreateEvent, params: RequestParams = {}) =>
+    productSpecificationCreateEvent: (
+      data: ProductSpecificationCreateEvent,
+      params: RequestParams = {},
+    ) =>
       this.request<void, Error>({
         path: `/listener/productSpecificationCreateEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2550,10 +2848,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Client listener for entity ProductSpecificationDeleteEvent
      * @request POST:/listener/productSpecificationDeleteEvent
      */
-    productSpecificationDeleteEvent: (data: ProductSpecificationDeleteEvent, params: RequestParams = {}) =>
+    productSpecificationDeleteEvent: (
+      data: ProductSpecificationDeleteEvent,
+      params: RequestParams = {},
+    ) =>
       this.request<void, Error>({
         path: `/listener/productSpecificationDeleteEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2566,10 +2867,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Client listener for entity ProductSpecificationStateChangeEvent
      * @request POST:/listener/productSpecificationStateChangeEvent
      */
-    productSpecificationStateChangeEvent: (data: ProductSpecificationStateChangeEvent, params: RequestParams = {}) =>
+    productSpecificationStateChangeEvent: (
+      data: ProductSpecificationStateChangeEvent,
+      params: RequestParams = {},
+    ) =>
       this.request<void, Error>({
         path: `/listener/productSpecificationStateChangeEvent`,
-        method: "POST",
+        method: 'POST',
         body: data,
         ...params,
       }),
@@ -2583,10 +2887,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary List or find ProductCatalog objects
      * @request GET:/productCatalog
      */
-    listProductCatalog: (query?: { fields?: string; offset?: number; limit?: number }, params: RequestParams = {}) =>
+    listProductCatalog: (
+      query?: { fields?: string; offset?: number; limit?: number },
+      params: RequestParams = {},
+    ) =>
       this.request<ProductCatalog[], Error>({
         path: `/productCatalog`,
-        method: "GET",
+        method: 'GET',
         query: query,
         ...params,
       }),
@@ -2599,10 +2906,14 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Creates a ProductCatalog
      * @request POST:/productCatalog
      */
-    createProductCatalog: (data: ProductCatalogFVO, query?: { fields?: string }, params: RequestParams = {}) =>
+    createProductCatalog: (
+      data: ProductCatalogFVO,
+      query?: { fields?: string },
+      params: RequestParams = {},
+    ) =>
       this.request<ProductCatalog, Error>({
         path: `/productCatalog`,
-        method: "POST",
+        method: 'POST',
         query: query,
         body: data,
         ...params,
@@ -2616,10 +2927,14 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Retrieves a ProductCatalog by ID
      * @request GET:/productCatalog/{id}
      */
-    retrieveProductCatalog: (id: string, query?: { fields?: string }, params: RequestParams = {}) =>
+    retrieveProductCatalog: (
+      id: string,
+      query?: { fields?: string },
+      params: RequestParams = {},
+    ) =>
       this.request<ProductCatalog, Error>({
         path: `/productCatalog/${id}`,
-        method: "GET",
+        method: 'GET',
         query: query,
         ...params,
       }),
@@ -2640,7 +2955,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     ) =>
       this.request<ProductCatalog, Error>({
         path: `/productCatalog/${id}`,
-        method: "PATCH",
+        method: 'PATCH',
         query: query,
         body: data,
         ...params,
@@ -2657,7 +2972,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     deleteProductCatalog: (id: string, params: RequestParams = {}) =>
       this.request<any, Error>({
         path: `/productCatalog/${id}`,
-        method: "DELETE",
+        method: 'DELETE',
         ...params,
       }),
   };
@@ -2670,10 +2985,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary List or find ProductOffering objects
      * @request GET:/productOffering
      */
-    listProductOffering: (query?: { fields?: string; offset?: number; limit?: number }, params: RequestParams = {}) =>
+    listProductOffering: (
+      query?: { fields?: string; offset?: number; limit?: number },
+      params: RequestParams = {},
+    ) =>
       this.request<ProductOffering[], Error>({
         path: `/productOffering`,
-        method: "GET",
+        method: 'GET',
         query: query,
         ...params,
       }),
@@ -2686,10 +3004,14 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Creates a ProductOffering
      * @request POST:/productOffering
      */
-    createProductOffering: (data: ProductOfferingFVO, query?: { fields?: string }, params: RequestParams = {}) =>
+    createProductOffering: (
+      data: ProductOfferingFVO,
+      query?: { fields?: string },
+      params: RequestParams = {},
+    ) =>
       this.request<ProductOffering, Error>({
         path: `/productOffering`,
-        method: "POST",
+        method: 'POST',
         query: query,
         body: data,
         ...params,
@@ -2703,10 +3025,14 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Retrieves a ProductOffering by ID
      * @request GET:/productOffering/{id}
      */
-    retrieveProductOffering: (id: string, query?: { fields?: string }, params: RequestParams = {}) =>
+    retrieveProductOffering: (
+      id: string,
+      query?: { fields?: string },
+      params: RequestParams = {},
+    ) =>
       this.request<ProductOffering, Error>({
         path: `/productOffering/${id}`,
-        method: "GET",
+        method: 'GET',
         query: query,
         ...params,
       }),
@@ -2727,7 +3053,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     ) =>
       this.request<ProductOffering, Error>({
         path: `/productOffering/${id}`,
-        method: "PATCH",
+        method: 'PATCH',
         query: query,
         body: data,
         ...params,
@@ -2744,7 +3070,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     deleteProductOffering: (id: string, params: RequestParams = {}) =>
       this.request<any, Error>({
         path: `/productOffering/${id}`,
-        method: "DELETE",
+        method: 'DELETE',
         ...params,
       }),
   };
@@ -2763,7 +3089,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     ) =>
       this.request<ProductOfferingPrice[], Error>({
         path: `/productOfferingPrice`,
-        method: "GET",
+        method: 'GET',
         query: query,
         ...params,
       }),
@@ -2783,7 +3109,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     ) =>
       this.request<ProductOfferingPrice, Error>({
         path: `/productOfferingPrice`,
-        method: "POST",
+        method: 'POST',
         query: query,
         body: data,
         ...params,
@@ -2797,10 +3123,14 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Retrieves a ProductOfferingPrice by ID
      * @request GET:/productOfferingPrice/{id}
      */
-    retrieveProductOfferingPrice: (id: string, query?: { fields?: string }, params: RequestParams = {}) =>
+    retrieveProductOfferingPrice: (
+      id: string,
+      query?: { fields?: string },
+      params: RequestParams = {},
+    ) =>
       this.request<ProductOfferingPrice, Error>({
         path: `/productOfferingPrice/${id}`,
-        method: "GET",
+        method: 'GET',
         query: query,
         ...params,
       }),
@@ -2821,7 +3151,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     ) =>
       this.request<ProductOfferingPrice, Error>({
         path: `/productOfferingPrice/${id}`,
-        method: "PATCH",
+        method: 'PATCH',
         query: query,
         body: data,
         ...params,
@@ -2838,7 +3168,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     deleteProductOfferingPrice: (id: string, params: RequestParams = {}) =>
       this.request<any, Error>({
         path: `/productOfferingPrice/${id}`,
-        method: "DELETE",
+        method: 'DELETE',
         ...params,
       }),
   };
@@ -2857,7 +3187,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     ) =>
       this.request<ProductSpecification[], Error>({
         path: `/productSpecification`,
-        method: "GET",
+        method: 'GET',
         query: query,
         ...params,
       }),
@@ -2877,7 +3207,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     ) =>
       this.request<ProductSpecification, Error>({
         path: `/productSpecification`,
-        method: "POST",
+        method: 'POST',
         query: query,
         body: data,
         ...params,
@@ -2891,10 +3221,14 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @summary Retrieves a ProductSpecification by ID
      * @request GET:/productSpecification/{id}
      */
-    retrieveProductSpecification: (id: string, query?: { fields?: string }, params: RequestParams = {}) =>
+    retrieveProductSpecification: (
+      id: string,
+      query?: { fields?: string },
+      params: RequestParams = {},
+    ) =>
       this.request<ProductSpecification, Error>({
         path: `/productSpecification/${id}`,
-        method: "GET",
+        method: 'GET',
         query: query,
         ...params,
       }),
@@ -2915,7 +3249,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     ) =>
       this.request<ProductSpecification, Error>({
         path: `/productSpecification/${id}`,
-        method: "PATCH",
+        method: 'PATCH',
         query: query,
         body: data,
         ...params,
@@ -2932,7 +3266,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     deleteProductSpecification: (id: string, params: RequestParams = {}) =>
       this.request<any, Error>({
         path: `/productSpecification/${id}`,
-        method: "DELETE",
+        method: 'DELETE',
         ...params,
       }),
   };
